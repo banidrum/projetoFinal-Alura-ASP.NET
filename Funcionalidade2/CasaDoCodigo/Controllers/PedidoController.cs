@@ -72,9 +72,9 @@ namespace CasaDoCodigo.Controllers
             return await pedidoRepository.UpdateQuantidade(itemPedido);
         }
 
-		public IActionResult BuscaDeProdutos()
+		public async Task<IActionResult> BuscaDeProdutos()
 		{
-			return View(produtoRepository.GetProdutos());
+			return View(await produtoRepository.GetProdutos());
 		}
     }
 }
