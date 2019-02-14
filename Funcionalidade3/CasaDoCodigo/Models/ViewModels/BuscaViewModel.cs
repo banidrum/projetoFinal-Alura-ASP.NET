@@ -13,7 +13,7 @@ namespace CasaDoCodigo.Models.ViewModels
 			EncontrouResultados = encontrouResultados;
 		}
 
-		public IList<Produto> Produtos { get; set;  }
+		public IList<Produto> Produtos { get; }
 
 		//Vai retornar true se encontrou resultados na pesquisa
 		public BuscaViewModel(bool encontrouResultados)
