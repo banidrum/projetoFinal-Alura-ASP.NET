@@ -27,15 +27,15 @@ namespace CasaDoCodigo.Repositories
 		public async Task<IList<Produto>> GetProdutos(string pesquisa)
 		{
 			//Consulta dos produtos
-			IQueryable<Produto> listaProduto = dbSet.Include(p => p.Categoria);
+			IQueryable<Produto> query = dbSet.Include(p => p.Categoria);
 
 			if (!string.IsNullOrWhiteSpace(pesquisa))
 			{
-				var query = listaProduto
-					.Where(p => p.Nome.Contains(pesquisa) || p.Categoria.NomeCategoria.Contains(pesquisa));
+				query = 
+					query.Where(p => p.Nome.Contains(pesquisa) || p.Categoria.NomeCategoria.Contains(pesquisa));
 			}
 
-			return await listaProduto.ToListAsync();
+			return await query.ToListAsync();
 		}
 
         public async Task SaveProdutos(List<Livro> livros)
