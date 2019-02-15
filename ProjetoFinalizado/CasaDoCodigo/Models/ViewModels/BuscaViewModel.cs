@@ -9,8 +9,8 @@ namespace CasaDoCodigo.Models.ViewModels
 	{
 		public BuscaViewModel(IList<Produto> produtos, bool encontrouResultados)
 		{
-			this.Produtos = produtos;
-			this.EncontrouResultados = encontrouResultados;
+			Produtos = produtos;
+			EncontrouResultados = encontrouResultados;
 		}
 
 		public IList<Produto> Produtos { get; set;  }
